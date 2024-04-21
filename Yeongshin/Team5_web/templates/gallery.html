@@ -5,11 +5,21 @@
   </head>
   <body>
     <h1>이미지 갤러리</h1>
+    <h2>Images</h2>
     <ul>
       {% for image in images %}
       <li>
-        <img src="data:image/png;base64,{{ image[1].hex() }}" alt="{{ image[2] }}" />
-        <p>{{ image[2] }}</p>
+        <img src="data:image/png;base64,{{ image.image.hex() }}" alt="{{ image.caption }}" />
+        <p>{{ image.caption }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <h2>Braille Images</h2>
+    <ul>
+      {% for braille in brailles %}
+      <li>
+        <img src="data:image/png;base64,{{ braille.braille_image.hex() }}" alt="{{ braille.text }}" />
+        <p>{{ braille.text }}</p>
       </li>
       {% endfor %}
     </ul>
