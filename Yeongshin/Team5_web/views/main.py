@@ -7,6 +7,14 @@ engine = pyttsx3.init()
 from Team5_web.utils import image_to_binary
 from Team5_web.model import Image, Braille
 
+# 이미지 파일 타입
+def get_mime_type(file_extension):
+    if file_extension == '.png':
+        return 'image/png'
+    elif file_extension == '.jpg' or file_extension == '.jpeg':
+        return 'image/jpeg'
+    else:
+        return 'application/octet-stream'  # Default MIME type
 
 def generate_caption(image):
     # 모델 코드 구현
