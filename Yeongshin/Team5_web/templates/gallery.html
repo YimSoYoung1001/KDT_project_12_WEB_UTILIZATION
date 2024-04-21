@@ -9,7 +9,7 @@
     <ul>
       {% for image in images %}
       <li>
-        <img src="data:image/png;base64,{{ image.image.hex() }}" alt="{{ image.caption }}" />
+        <img src="data:{{ image.mime_type }};base64,{{ image.image.hex() }}" alt="{{ image.caption }}" />
         <p>{{ image.caption }}</p>
       </li>
       {% endfor %}
@@ -18,7 +18,7 @@
     <ul>
       {% for braille in brailles %}
       <li>
-        <img src="data:image/png;base64,{{ braille.braille_image.hex() }}" alt="{{ braille.text }}" />
+        <img src="data:{{ braille.mime_type }};base64,{{ braille.braille_image.hex() }}" alt="{{ braille.text }}" />
         <p>{{ braille.text }}</p>
       </li>
       {% endfor %}
